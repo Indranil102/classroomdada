@@ -58,15 +58,22 @@ const Hero = () => {
           <div className="hero-video-inner">
             <div className="hero-video-top">
               <div className="hero-video-channel">Class Room DADA</div>
-              <div className="hero-video-chip">Sample Experiment</div>
+              <div className="hero-video-chip">Carpentry shop</div>
             </div>
             <div className="hero-video-thumbnail">
-              <div className="hero-play-button">
-                <FaPlay className="hero-play-icon" />
-              </div>
-            </div>
+  <img
+    src="https://images.unsplash.com/photo-1765527634013-bb052d3f5b4c?q=80&w=2071&auto=format&fit=crop"
+    alt="Mechanical experiment"
+  />
+
+  <div className="hero-play-button">
+    <FaPlay className="hero-play-icon" />
+  </div>
+</div>
+
             <div className="hero-video-footer">
-              <span>Centrifugal Pump Test Rig</span>
+              <span>ULTRASONIC TEST ANGLE PROBE <br/>WITH PRACTICAL
+</span>
               <span>9:12 min</span>
             </div>
           </div>

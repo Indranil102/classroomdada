@@ -352,28 +352,68 @@ body {
   border-radius: 999px;
   background-color: rgba(255, 255, 255, 0.08);
 }
-
 .hero-video-thumbnail {
+  position: relative;
   flex: 1;
   margin: 16px 0;
   border-radius: 16px;
+  overflow: hidden;
+
+  /* fallback / overlay gradient */
   background: linear-gradient(120deg, var(--color-red), var(--color-orange));
-  position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* Image becomes background-like */
+.hero-video-thumbnail img {
+  position: absolute;
+  inset: 0;                 /* top:0 right:0 bottom:0 left:0 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* fills area properly */
+  z-index: 0;
+}
+
+/* Optional dark overlay for contrast */
+.hero-video-thumbnail::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+/* Play button above everything */
 .hero-play-button {
+  position: relative;
+  z-index: 2;
+
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.92);
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
+
+.hero-play-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+}
+
+.hero-play-icon {
+  margin-left: 4px;
+}
+
 
 .hero-play-icon {
   margin-left: 4px;
